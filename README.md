@@ -1,24 +1,28 @@
-# tabaturnos
+# tabaturnos — publicación turnos2
 
 Calendario de turnos para las cuatro producciones de ANCAP.
 
-## Publicación de pruebas: GitHub Pages
+## Publicación en GitHub Pages
 
-Repositorio propuesto: `TabareCasalas/turnos2`.
+Este paquete contiene la aplicación **tanto en la raíz como en `docs/`**.
 
-En **Settings > Pages** del repositorio, configurar **Deploy from a branch**,
-`main`, carpeta **/docs**. Una vez publicado, la ruta prevista es:
+Si GitHub Pages está configurado para publicar `main` con carpeta `/(root)`,
+la aplicación se servirá desde el `index.html` de la raíz; si está configurado
+con `/docs`, se usará `docs/index.html`. En ambos casos se debería abrir
 `https://tabarecasalas.github.io/turnos2/`.
 
-Los recursos del directorio `docs/` usan rutas relativas, por lo que funcionan bajo `/turnos2/`.
+Ruta de configuración: **GitHub → repositorio turnos2 → Settings → Pages →
+Build and deployment → Deploy from a branch → Branch: main → /(root) o /docs → Save**.
+
+Recomendación: usar **main /docs** para separar los archivos publicados del código fuente.
+No selecciones `GitHub Actions` a menos que hayas configurado un workflow propio.
+
+Si GitHub Pages sigue mostrando el README, verificá que el último despliegue
+se haya completado en Actions, y recargá con Ctrl+F5.
 
 ## Desarrollo
 
-Se recuperaron los componentes Vue de los mapas de código fuente de la
-versión original. El directorio `docs/` ya contiene la web lista para publicar;
-no hace falta compilarla para GitHub Pages.
-
-Para desarrollar usando Vue CLI:
+Los componentes Vue recuperados están en `src/`. Para modificarlos:
 
 ```bash
 npm install
@@ -26,23 +30,16 @@ npm run serve
 npm run build
 ```
 
-Se conservaron los cálculos de turnos, feriados y relevos de la versión original.
-## Identificación del día actual
+La compilación con la configuración actual genera los archivos públicos
+en `docs/`. Si publicás desde `/(root)`, copiá los archivos generados de
+`docs/` a la raíz del repositorio después de cada compilación.
 
-La fecha de hoy muestra una etiqueta **HOY** de fondo azul oscuro y letras blancas,
-por encima del número del día. Se conserva el color de cada turno, el borde de feriado
-y el anillo de selección. La etiqueta aparece únicamente en la fecha actual según la
-fecha local del dispositivo. No hay animación ni parpadeo.
+## Cambios
 
-El cambio está aplicado tanto en `src/components/CalendarioTurnos.vue` como en
-la versión ya publicada de `docs/`, sin necesidad de ejecutar el build para probarlo.
+- Nombre `tabaturnos` en la interfaz y el título de la pestaña.
+- Ícono de la letra T en SVG, PNG e ICO.
+- Etiqueta **HOY** para la fecha local actual, sin animación.
+- Los colores de turno, los feriados y la selección se conservan.
+- Las rutas web de CSS, JavaScript e íconos son relativas.
 
-## Cambios de identidad
-
-- Nombre de la aplicación: `tabaturnos` (pestaña del navegador e interfaz).
-- Nuevo favicon con la letra T y alternativa SVG/PNG.
-- Enlaces a recursos relativos compatibles con un repositorio nuevo.
-- Nombre del paquete `tabaturnos`.
-
-> Importante: este ZIP no crea el repositorio remoto en GitHub; hay que crear
-> `turnos2` y subirle este contenido. No modifica `turnos`.
+El repositorio anterior `turnos` no se modifica.
