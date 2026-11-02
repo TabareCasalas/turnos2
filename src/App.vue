@@ -1,8 +1,6 @@
-// App.vue
 <template>
   <div class="min-h-screen bg-gray-100 p-4">
     <div class="text-center mb-4">
-      <h1 class="text-2xl font-extrabold tracking-tight text-gray-900">tabaturnos</h1>
       <button
         v-if="produccion"
         @click="resetProduccion"
@@ -45,6 +43,3 @@ export default {
 }
 </script>
 
-<style>
-/* Tailwind está importado desde index.css */
-</style>

@@ -1,4 +1,3 @@
-<!-- components/SelectorProduccion.vue -->
 <template>
     <div class="flex flex-col items-center justify-center min-h-screen text-center">
       <h1 class="text-2xl font-bold mb-6">Seleccionar Producción</h1>

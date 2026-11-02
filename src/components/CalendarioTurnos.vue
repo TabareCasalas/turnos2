@@ -94,7 +94,6 @@
 .bg-green-300 { background-color: #4ade80; }
 .bg-blue-300 { background-color: #60a5fa; }
 
-/* Todos los días tienen la misma altura, incluso el que lleva la etiqueta. */
 .dia-calendario {
   min-height: 3.5rem;
   display: flex;
